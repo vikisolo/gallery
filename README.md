@@ -1,1 +1,1 @@
-(https://vikisolo.github.io/galler/image-gallery)
+https://vikisolo.github.io/galler/image-gallery/
