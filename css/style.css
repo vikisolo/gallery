@@ -7,12 +7,7 @@
   src: url("../fonts/AvenirNextCyr-Demi.woff") format('woff');
   src: url("../fonts/")format('woff');
 }
-@font-face {
-  font-family:'Roboto' ;
-  src: url("../fonts/Roboto-Regular.woff") format('woff');
-  src: url("../fonts/Roboto-BoldItalic.woff") format('woff');
-  font-weight: 700;
-}
+
 *,
 *::before,
 *::after{
@@ -22,12 +17,10 @@
   list-style: none;
 }
 html {
-  font-size: 1rem;
+  width: 100%;
+  height: 100%;
   scroll-behavior: smooth;
-  background-color:rgb(136, 194, 177);
-  color:#121212;
   line-height: 1.5;
-  font-family: Arial, sans-serif;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -44,6 +37,16 @@ h3{
   display: inline-block;
 }
 
+.header-item{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #CDCDCD;
+}
+.header1-item:hover{
+  text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
 .header {
   min-width: 70rem;
   width: 100%;
@@ -59,6 +62,27 @@ h3{
   font-size: 2rem;
 }
 
+header1 {
+  border-bottom: 5px solid rgb(170, 148, 106);}
+
+
+#header1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 70px;
+  padding: 0 20px;
+}
+
+/*------Logo------*/
+.logo{
+  text-decoration: none;
+}
+.logo:hover {
+  text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
 /*Info"*/
 
 .info {
@@ -68,21 +92,23 @@ h3{
     text-align: center;
     color: #0c0b0b;
 }
+
+
 body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   min-width: 320px;
   min-height: 100vh;
-  background-color:transparent;
-  background-image: url(../img/summer.jpeg);
+  background-color:rgb(17, 172, 138);
   font-family: 'Inter', sans-serif;
   font-size: 18px;
   line-height: 2;
-  color: #ad1919;
+
 }
 
-  /*audio*/
+  /*Unsplash API*/
+
 
   #search_box {
     position: relative;
@@ -90,6 +116,7 @@ body {
   }
   
   #search_box input {
+
     box-sizing: border-box;
     width: 100%;
     font-size: 1rem;
@@ -97,14 +124,17 @@ body {
     border-radius: 25px;
     outline: none;
     transition: all 0.30s ease-in-out;
-    border: 1px solid #DDDDDD;
+    border: 1px solid #964747;
   }
   
   input:focus {
-    box-shadow: 0 0 5px orange;
-    border: 1px solid orange;
+    box-shadow: 2px 0 5px #9d0daa;
+    border: 5px solid rgb(211, 143, 16);;
   }
-  
+   input:active {
+    border: 1px solid rgb(229, 150, 3);
+    box-shadow: 2px 0 5px rgb(229, 150, 3);
+}
   #search_box i {
     color: black;
     position: absolute;
@@ -115,7 +145,10 @@ body {
   }
   
   #search_box i:hover {
-    color: orange;
+    color: rgb(204, 16, 211);
+    width: 30px;
+    height: 30px;
+    transform: scale(1.3);
   }
   
   #grid {
@@ -124,7 +157,9 @@ body {
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: flex-start;
+    
   }
+
   
   .img {
     width: 380px;
@@ -134,53 +169,15 @@ body {
     background-size: cover;
     border-radius: 2px;
     cursor: pointer;
+    transition: all 1s ease;
   }
-  
-  @media(max-width:1280px) {
-    .container {
-      width: 100%;
-    }
-  }
-  
-  @media(max-width:768px) {
-    #main {
-      width: 95%;
-    }
-  
-    .img {
-      width: 100%;
-    }
-  
-    #header {
-      margin: 10px 0;
-      padding: 20px;
-      gap: 10px;
-      justify-content: center;
-    }
-  
-    #header h2 {
-      padding: 5px 0;
-    }
-  }
-  
-  @media(max-width:480px) {
-    #header h2 {
-      text-align: center;
-      font-size: 1.5rem;
-    }
-  
-    #search_box {
-      width: 80%;
-      margin: auto;
-    }
-  
-    #search_box input {
-      font-size: .7rem;
-    }
-  }
+  .img:hover {
+    transform: scale(0.95);
+}
 
   /*footer*/
 .footer {
+  margin-top: 100px;
   height: 100px;
   display: flex;
   align-items: center;
@@ -203,5 +200,47 @@ body {
   font-weight: 700;
 }
 
+@media(max-width:1280px) {
+  .container {
+    width: 100%;
+  }
+}
+
+@media(max-width:768px) {
+  #main {
+    width: 95%;
+  }
+
+  .img {
+    width: 100%;
+  }
+
+  #header {
+    margin: 10px 0;
+    padding: 20px;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  #header h2 {
+    padding: 5px 0;
+  }
+}
+
+@media(max-width:480px) {
+  #header h2 {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+
+  #search_box {
+    width: 80%;
+    margin: auto;
+  }
+
+  #search_box input {
+    font-size: .7rem;
+  }
+}
 
 
